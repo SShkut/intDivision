@@ -13,18 +13,19 @@ public class IntegerDividerFormatter {
 		Queue<Integer> intermediateValues = divisionResult.getIntermedieateValues();
 		Queue<Integer> reminders = divisionResult.getReminders();
 		StringBuilder answer = new StringBuilder();
+		String newLine = System.lineSeparator();
 		
-		answer.append(dividend + "|" + divisor + "\n");
+		answer.append(dividend + "|" + divisor + newLine);
 		answer.append(intermediateValues.isEmpty() ? 0 : intermediateValues.peek());
-		answer.append(getRepeatedString(" ", valueOf(dividend).length() - valueOf(intermediateValues.isEmpty() ? 0 : intermediateValues.remove()).length()) + "|------\n");
-		answer.append("-" + getRepeatedString(" ", valueOf(dividend).length() - 1) + "|" + quotient + "\n");
+		answer.append(getRepeatedString(" ", valueOf(dividend).length() - valueOf(intermediateValues.isEmpty() ? 0 : intermediateValues.remove()).length()) + "|------" + newLine);
+		answer.append("-" + getRepeatedString(" ", valueOf(dividend).length() - 1) + "|" + quotient + newLine);
 		
 		int offset = 1;
 		while (!intermediateValues.isEmpty()) {
 			while (!reminders.isEmpty()) {
-				answer.append(getRepeatedString(" ", offset) + reminders.remove() + "\n");
-				answer.append(getRepeatedString(" ", offset) + intermediateValues.remove() + "\n");
-				answer.append(getRepeatedString(" ", offset) + "--\n");
+				answer.append(getRepeatedString(" ", offset) + reminders.remove() + newLine);
+				answer.append(getRepeatedString(" ", offset) + intermediateValues.remove() + newLine);
+				answer.append(getRepeatedString(" ", offset) + "--" + newLine);
 				break;
 			}
 			offset++;
