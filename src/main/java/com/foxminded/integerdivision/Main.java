@@ -6,11 +6,11 @@ public class Main {
 
 	public static void main(String[] args) {		
 		Scanner scanner = new Scanner(System.in);
-		Division division = new Division();
+		IntegerDivider division = new IntegerDivider();
 		System.out.print("Enter a dividend: ");
-		String dividend = scanner.nextLine();
+		int dividend = scanner.nextInt();
 		System.out.print("Enter a divider: ");
-		String divider = scanner.nextLine();
+		int divider = scanner.nextInt();
 		System.out.println(division.divide(dividend, divider));
 		scanner.close();
 	}
