@@ -11,7 +11,9 @@ public class Main {
 		int dividend = scanner.nextInt();
 		System.out.print("Enter a divider: ");
 		int divider = scanner.nextInt();
-		System.out.println(division.divide(dividend, divider));
+		DivisionResult divisionResult = division.divide(dividend, divider);
+		IntegerDividerFormatter formatter = new IntegerDividerFormatter();
+		System.out.println(formatter.consoleVisualisation(divisionResult));
 		scanner.close();
 	}
 }

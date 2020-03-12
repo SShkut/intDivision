@@ -2,16 +2,18 @@ package com.foxminded.integerdivision;
 
 public class IntegerDivider {
 
-	public int divide(int dividend, int divisor) {
+	public DivisionResult divide(int dividend, int divisor) {
+		DivisionResult divisionResult = new DivisionResult(dividend, divisor);
 		int quotient = 0;
 		int radix = 10;
 		int actionNumber = 0;
-		int intermediateResult;
+		boolean isFirstOperationPass = false;
 		if (divisor == 0) {
-			return 0;
+			throw new ArithmeticException("Division by 0 is undefined.");
 		}
 		if (dividend == 0) {
-			return 0;
+			divisionResult.setQuotion(0);
+			return divisionResult;
 		}
 		
 		int dividendLength = (logb(radix, Math.abs(dividend) +1));
@@ -19,24 +21,31 @@ public class IntegerDivider {
 		int currentDividend = dividend / position;
 		
 		while (position >= 1) {
-			if (Math.abs(currentDividend) >= divisor) {
+			if (Math.abs(currentDividend) >= Math.abs(divisor)) {
+				if (isFirstOperationPass) {
+					divisionResult.addReminder(Math.abs(currentDividend));
+				}
 				quotient *= radix;
 				quotient += currentDividend / divisor;			
-				intermediateResult = (quotient % radix) * divisor;
-				currentDividend -= intermediateResult;
+				int intermedeateValue = (quotient % radix) * divisor;
+				divisionResult.addIntermedeateValue(Math.abs(intermedeateValue));				
+				currentDividend -= intermedeateValue;
 				actionNumber = 0;
+				isFirstOperationPass = true;
 			}
 			if (position >= radix) {
 				currentDividend *= radix;
-				currentDividend += (dividend % position) / (position / radix);	
+				currentDividend += (dividend % position) / (position / radix);
 			}			
 			if (actionNumber >= 1) {
 				quotient *= radix;
 			}			
 			actionNumber++;
 			position /= radix;
-		}		
-		return quotient;
+		}
+		divisionResult.setQuotion(quotient);
+		divisionResult.addReminder(Math.abs(currentDividend));
+		return divisionResult;
 	}
 	
 	private int logb(int base, int value) {		
