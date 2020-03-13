@@ -1,11 +1,11 @@
 package com.foxminded.integerdivision;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -34,7 +34,7 @@ class IntegerDividerTest {
 
 	@Test
 	void givenDivisorEqualsZero_whenDivide_thenArithmeticException() {
-		Assertions.assertThrows(ArithmeticException.class, () -> divider.divide(1, 0));
+		assertThrows(ArithmeticException.class, () -> divider.divide(1, 0));
 	}
 
 	@Test

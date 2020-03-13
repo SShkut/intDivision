@@ -6,10 +6,10 @@ import java.util.Queue;
 
 public class IntegerDividerFormatter {
 
-	public String consoleVisualisation(DivisionResult divisionResult) {
+	public String format(DivisionResult divisionResult) {
 		int dividend = divisionResult.getDividend();
 		int divisor = divisionResult.getDivisor();
-		int quotient = divisionResult.getQuotion();
+		int quotient = divisionResult.getQuotient();
 		Queue<Integer> intermediateValues = divisionResult.getIntermedieateValues();
 		Queue<Integer> reminders = divisionResult.getReminders();
 		StringBuilder answer = new StringBuilder();

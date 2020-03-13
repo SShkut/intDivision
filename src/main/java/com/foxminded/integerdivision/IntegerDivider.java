@@ -12,7 +12,7 @@ public class IntegerDivider {
 			throw new ArithmeticException("Division by 0 is undefined.");
 		}
 		if (dividend == 0) {
-			divisionResult.setQuotion(0);
+			divisionResult.setQuotient(0);
 			return divisionResult;
 		}
 		
@@ -43,7 +43,7 @@ public class IntegerDivider {
 			actionNumber++;
 			position /= radix;
 		}
-		divisionResult.setQuotion(quotient);
+		divisionResult.setQuotient(quotient);
 		divisionResult.addReminder(Math.abs(currentDividend));
 		return divisionResult;
 	}
