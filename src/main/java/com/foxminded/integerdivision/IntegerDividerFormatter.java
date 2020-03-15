@@ -7,10 +7,14 @@ import java.util.Queue;
 public class IntegerDividerFormatter {
 
 	public String format(DivisionResult divisionResult) {
+		if (divisionResult == null) {
+			return "";
+		}
+		
 		int dividend = divisionResult.getDividend();
 		int divisor = divisionResult.getDivisor();
 		int quotient = divisionResult.getQuotient();
-		Queue<Integer> intermediateValues = divisionResult.getIntermedieateValues();
+		Queue<Integer> intermediateValues = divisionResult.getIntermediateValues();
 		Queue<Integer> reminders = divisionResult.getReminders();
 		StringBuilder answer = new StringBuilder();
 		String newLine = System.lineSeparator();

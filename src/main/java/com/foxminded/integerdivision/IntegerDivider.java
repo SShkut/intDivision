@@ -27,9 +27,9 @@ public class IntegerDivider {
 				}
 				quotient *= radix;
 				quotient += currentDividend / divisor;			
-				int intermedeateValue = (quotient % radix) * divisor;
-				divisionResult.addIntermedeateValue(Math.abs(intermedeateValue));				
-				currentDividend -= intermedeateValue;
+				int intermediateValue = (quotient % radix) * divisor;
+				divisionResult.addIntermedeateValue(Math.abs(intermediateValue));				
+				currentDividend -= intermediateValue;
 				actionNumber = 0;
 				isFirstOperationPass = true;
 			}

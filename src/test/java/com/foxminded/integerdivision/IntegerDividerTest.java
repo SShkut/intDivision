@@ -11,8 +11,8 @@ import org.junit.jupiter.api.Test;
 
 class IntegerDividerTest {
 
-	IntegerDivider divider;
-	DivisionResult result;
+	private IntegerDivider divider;
+	private DivisionResult result;
 
 	@BeforeEach
 	void setUp() throws Exception {

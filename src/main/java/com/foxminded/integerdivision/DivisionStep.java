@@ -5,24 +5,24 @@ import java.util.Queue;
 
 public class DivisionStep {
 	
-	private Queue<Integer> intermedeateValues;
+	private Queue<Integer> intermediateValues;
 	private Queue<Integer> reminders;	
 
 	public DivisionStep() {
-		intermedeateValues = new LinkedList<>();
+		intermediateValues = new LinkedList<>();
 		reminders = new LinkedList<>();
 	}
 
-	public Queue<Integer> getIntermedeateValues() {
-		return intermedeateValues;
+	public Queue<Integer> getIntermediateValues() {
+		return intermediateValues;
 	}
 	
-	public void setIntermedeateValues(Queue<Integer> intermedeateValues) {
-		this.intermedeateValues = intermedeateValues;
+	public void setIntermediateValues(Queue<Integer> intermediateValues) {
+		this.intermediateValues = intermediateValues;
 	}
 	
-	public void addIntermedeateValue(Integer intermedeateValue) {
-		intermedeateValues.add(intermedeateValue);
+	public void addIntermediateValue(Integer intermediateValue) {
+		intermediateValues.add(intermediateValue);
 	}
 	
 	public Queue<Integer> getReminders() {
@@ -41,7 +41,7 @@ public class DivisionStep {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((intermedeateValues == null) ? 0 : intermedeateValues.hashCode());
+		result = prime * result + ((intermediateValues == null) ? 0 : intermediateValues.hashCode());
 		result = prime * result + ((reminders == null) ? 0 : reminders.hashCode());
 		return result;
 	}
@@ -55,10 +55,10 @@ public class DivisionStep {
 		if (getClass() != obj.getClass())
 			return false;
 		DivisionStep other = (DivisionStep) obj;
-		if (intermedeateValues == null) {
-			if (other.intermedeateValues != null)
+		if (intermediateValues == null) {
+			if (other.intermediateValues != null)
 				return false;
-		} else if (!intermedeateValues.equals(other.intermedeateValues))
+		} else if (!intermediateValues.equals(other.intermediateValues))
 			return false;
 		if (reminders == null) {
 			if (other.reminders != null)

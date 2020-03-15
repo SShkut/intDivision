@@ -8,19 +8,19 @@ public class DivisionResult {
 	private final int divisor;
 	private int quotient;
 	private DivisionStep divisionStep;
-	
+
 	public DivisionResult(int dividend, int divisor) {
 		this.dividend = dividend;
 		this.divisor = divisor;
 		divisionStep = new DivisionStep();
 	}	
 
-	public DivisionResult(int dividend, int divisor, int quotion, Queue<Integer> intermedeateValues, Queue<Integer> reminders) {
+	public DivisionResult(int dividend, int divisor, int quotion, Queue<Integer> intermediateValues, Queue<Integer> reminders) {
 		this.dividend = dividend;
 		this.divisor = divisor;
 		this.quotient = quotion;
 		divisionStep = new DivisionStep();
-		this.divisionStep.setIntermedeateValues(intermedeateValues);
+		this.divisionStep.setIntermediateValues(intermediateValues);
 		this.divisionStep.setReminders(reminders);
 	}
 
@@ -32,12 +32,12 @@ public class DivisionResult {
 		return divisor;
 	}
 	
-	public Queue<Integer> getIntermedieateValues() {
-		return divisionStep.getIntermedeateValues();
+	public Queue<Integer> getIntermediateValues() {
+		return divisionStep.getIntermediateValues();
 	}
 	
 	public void addIntermedeateValue(int intermedeateValue) {
-		divisionStep.addIntermedeateValue(intermedeateValue);
+		divisionStep.addIntermediateValue(intermedeateValue);
 	}
 
 	public Queue<Integer> getReminders() {
